@@ -35,6 +35,23 @@ library(tidyverse)
 [Learn more](https://www.tidyverse.org/packages/)
 :::
 
+## Shortcut of the day
+
+::: nonincremental
+
+`Alt + Shift + K`
+
+</br>
+
+. . .
+
+::: {.fragment .highlight-red}
+Shows all keyboard shortcuts!
+:::
+
+:::
+
+
 
 ## Relational Data
 ::: {.nonincremental}
