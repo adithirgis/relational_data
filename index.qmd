@@ -418,8 +418,11 @@ a)    set operations need same column / variable names while joins do not
 :::
 
 b)    no difference both are same, but have different syntax 
+
 ::: {.fragment .highlight-red}
+
 c)    set operations have no keys but joins have keys  
+
 :::
 
 :::
