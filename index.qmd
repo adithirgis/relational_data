@@ -230,18 +230,16 @@ band_instruments %>%
 
 ## Quiz 2
 
-:: nonincremental
+::: nonincremental
 How to combine all observations from the two tables band_members and band_instruments to get a table as shown here.
 
 ::: columns
 ::: {.column width="60%"}
 
 a)    left_join 
-
 ::: {.fragment .highlight-red}
 b)    full_join 
 :::
-
 c)    right_join
 
 d)    inner_join 
@@ -261,7 +259,7 @@ d)    inner_join
 
 ::: nonincremental
 
--   One table has duplicate keys. This is useful when you want to add in additional information as there is typically a one-to-many relationship.
+One table has duplicate keys. This is useful when you want to add in additional information as there is typically a one-to-many relationship.
 
 :::
 
@@ -378,7 +376,9 @@ intersect(df1, df2)
 
 ## Quiz 3
 
+
 ::: nonincremental
+
 
 How are joins and set operations different from each other? (Choose one or many)
 
@@ -395,6 +395,8 @@ c)    set operations are base R functions and joins are tidyverse functions
 
 ::: {.fragment .highlight-red}
 d)    set operations have no keys but joins have keys  
+:::
+
 :::
 
 ## Resources
