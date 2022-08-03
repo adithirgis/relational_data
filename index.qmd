@@ -193,7 +193,7 @@ d)    band, plays; primary key - band, plays
 inner_join(band_instruments, band_members, by = "name")
 ```
 
-![](img/inner_join.png){width="300" height="250"}
+![](img/inner_join.png){width="300" height="200"}
 :::
 
 ## Left Join
@@ -207,7 +207,7 @@ band_instruments %>%
   left_join(band_members, by = "name")
 ```
 
-![](img/left_join.png){width="300" height="250"}
+![](img/left_join.png){width="300" height="200"}
 
 :::
 
@@ -222,7 +222,7 @@ band_instruments %>%
   right_join(band_members, by = "name")
 ```
 
-![](img/right_join.png){width="300" height="250"}
+![](img/right_join.png){width="300" height="200"}
 :::
 
 ## Full Join
@@ -236,7 +236,7 @@ band_instruments %>%
   full_join(band_members, by = "name")
 ```
 
-![](img/outer_join.png){width="300" height="250"}
+![](img/outer_join.png){width="300" height="200"}
 
 :::
 
