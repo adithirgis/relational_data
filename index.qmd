@@ -90,6 +90,20 @@ A variable can be both a primary key and a foreign key.
 
 :::
 
+## Data used 
+
+::: nonincremental 
+
+`band_members` and `band_instruments`
+
+These data sets describe band members and instruments used by the Beatles and Rolling Stones.
+
+:::
+
+```{r}
+glimpse(band_members)
+glimpse(band_instruments)
+```
 
 ## Quiz 1
 

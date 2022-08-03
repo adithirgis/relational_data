@@ -467,6 +467,29 @@
 </ul>
 </div>
 </section>
+<section id="data-used" class="slide level2">
+<h2>Data used</h2>
+<div>
+<p><code>band_members</code> and <code>band_instruments</code></p>
+<p>These data sets describe band members and instruments used by the Beatles and Rolling Stones.</p>
+</div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-2_a05b6c1788e1f20dbdb12a78bdf9eafc">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">glimpse</span>(band_members)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 3
+Columns: 2
+$ name &lt;chr&gt; "Mick", "John", "Paul"
+$ band &lt;chr&gt; "Stones", "Beatles", "Beatles"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">glimpse</span>(band_instruments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 3
+Columns: 2
+$ name  &lt;chr&gt; "John", "Paul", "Keith"
+$ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
+</div>
+</div>
+</section>
 <section id="quiz-1" class="slide level2">
 <h2>Quiz 1</h2>
 <div>
@@ -532,8 +555,8 @@
 <section id="demo" class="slide level2">
 <h2>Demo</h2>
 <div>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-2_7b76a61ee3210c4ad27fe2b939844a64">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">inner_join</span>(band_instruments, band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-3_80eec0a6b14dfaee8f03b2ad138bb4d0">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">inner_join</span>(band_instruments, band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   name  plays  band   
@@ -549,9 +572,9 @@
 <h2>Left Join</h2>
 <div>
 <p>A <code>left join</code> keeps all observations in <code>x</code>.</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-3_feb9b05051800353abb5745c53841e89">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">left_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-4_4a1a34a529f3540da53973d6db5ea27f">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">left_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   name  plays  band   
@@ -568,9 +591,9 @@
 <h2>Right Join</h2>
 <div>
 <p>A <code>right join</code> keeps all observations in <code>y</code>.</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-4_f2f0416444fc609703d2574461035a94">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">right_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-5_7d338cc5206c718673dc46f88ab5f3d5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">right_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   name  plays  band   
@@ -587,9 +610,9 @@
 <h2>Full Join</h2>
 <div>
 <p>A <code>full join</code> keeps all observations in <code>x</code> and <code>y</code>.</p>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-5_7da5d9ae528b8eecb24dfd973818b2ee">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">full_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-6_965a362e6d98fcb594545bc6649b3dff">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">full_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   name  plays  band   
@@ -649,19 +672,19 @@
 </section>
 <section id="demo-1" class="slide level2">
 <h2>Demo</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-6_eb4526e4798699cf53b9f4b89c17bf6d">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>x <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="sc">~</span>key, <span class="sc">~</span>val_x,</span>
-<span id="cb10-3"><a href="#cb10-3"></a>     <span class="dv">1</span>, <span class="st">"x1"</span>,</span>
-<span id="cb10-4"><a href="#cb10-4"></a>     <span class="dv">2</span>, <span class="st">"x2"</span>,</span>
-<span id="cb10-5"><a href="#cb10-5"></a>     <span class="dv">2</span>, <span class="st">"x3"</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>)</span>
-<span id="cb10-7"><a href="#cb10-7"></a>y <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb10-8"><a href="#cb10-8"></a>  <span class="sc">~</span>key, <span class="sc">~</span>val_y,</span>
-<span id="cb10-9"><a href="#cb10-9"></a>     <span class="dv">1</span>, <span class="st">"y1"</span>,</span>
-<span id="cb10-10"><a href="#cb10-10"></a>     <span class="dv">2</span>, <span class="st">"y2"</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a>)</span>
-<span id="cb10-12"><a href="#cb10-12"></a><span class="fu">left_join</span>(x, y, <span class="at">by =</span> <span class="st">"key"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-7_deb78dce858f9d74a447b6d1abee5c41">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>x <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="sc">~</span>key, <span class="sc">~</span>val_x,</span>
+<span id="cb14-3"><a href="#cb14-3"></a>     <span class="dv">1</span>, <span class="st">"x1"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>     <span class="dv">2</span>, <span class="st">"x2"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5"></a>     <span class="dv">2</span>, <span class="st">"x3"</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>)</span>
+<span id="cb14-7"><a href="#cb14-7"></a>y <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb14-8"><a href="#cb14-8"></a>  <span class="sc">~</span>key, <span class="sc">~</span>val_y,</span>
+<span id="cb14-9"><a href="#cb14-9"></a>     <span class="dv">1</span>, <span class="st">"y1"</span>,</span>
+<span id="cb14-10"><a href="#cb14-10"></a>     <span class="dv">2</span>, <span class="st">"y2"</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>)</span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="fu">left_join</span>(x, y, <span class="at">by =</span> <span class="st">"key"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
     key val_x val_y
@@ -738,19 +761,19 @@
 </section>
 <section id="demo-2" class="slide level2">
 <h2>Demo</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-7_b3ad0f108c1fe614d2cb581a0759858e">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
-<span id="cb12-3"><a href="#cb12-3"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
-<span id="cb12-4"><a href="#cb12-4"></a>   <span class="dv">2</span>,  <span class="dv">1</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>)</span>
-<span id="cb12-6"><a href="#cb12-6"></a>df2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb12-7"><a href="#cb12-7"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
-<span id="cb12-8"><a href="#cb12-8"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
-<span id="cb12-9"><a href="#cb12-9"></a>   <span class="dv">1</span>,  <span class="dv">2</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a>)</span>
-<span id="cb12-11"><a href="#cb12-11"></a></span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="fu">intersect</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-8_16e7020beb1160c2b20d5404ad36fd18">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
+<span id="cb16-4"><a href="#cb16-4"></a>   <span class="dv">2</span>,  <span class="dv">1</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>)</span>
+<span id="cb16-6"><a href="#cb16-6"></a>df2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb16-7"><a href="#cb16-7"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
+<span id="cb16-8"><a href="#cb16-8"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
+<span id="cb16-9"><a href="#cb16-9"></a>   <span class="dv">1</span>,  <span class="dv">2</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>)</span>
+<span id="cb16-11"><a href="#cb16-11"></a></span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="fu">intersect</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
       x     y
