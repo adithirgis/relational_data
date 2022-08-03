@@ -354,4 +354,5 @@ intersect(df1, df2)
 -   R for Data Science [Chapter 13](https://r4ds.had.co.nz/relational-data.html#relational-data)
 -   Slides made using [Quarto](https://meghan.rbind.io/blog/quarto-slides/#quarto-resources)
 -   Art work by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
+-   For more information on [joins](https://github.com/gadenbuie/tidyexplain) 
 :::
