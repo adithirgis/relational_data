@@ -76,7 +76,7 @@ library(tidyverse)
 
 . . .
 
-::: {.fragment .highlight-seagreen}
+::: {.fragment .highlight-red}
 A variable can be both a primary key and a foreign key.
 :::
 
