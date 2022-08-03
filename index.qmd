@@ -43,8 +43,6 @@ library(tidyverse)
 
 </br>
 
-. . .
-
 ::: {.fragment .highlight-red}
 Shows all keyboard shortcuts!
 :::
