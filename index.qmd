@@ -66,7 +66,10 @@ library(tidyverse)
 
 -   A `primary key` uniquely identifies an observation in its own table. 
 -   A `foreign key` uniquely identifies an observation in another table.
--   Hence these keys cannot have duplicates. They can be combination of keys as well. 
+
+## Understanding Keys
+
+-   These keys cannot have duplicates. They can be combination of keys as well. 
 -   Sometimes a table doesn’t have an explicit primary key, there a new row can be created as `surrogate key` using `mutate()` or `row_number()`. 
 
 </br>
@@ -79,9 +82,13 @@ A variable can be both a primary key and a foreign key.
 
 ## Relations 
 
+::: nonincremental
+
 -   A primary key and the corresponding foreign key in another table form a relation.
 -   Relations are typically one-to-many. For example, each flight has one plane, but each plane has many flights. 
 -   many-to-many relations are possible as well. Eg- each airline flies to many airports; each airport hosts many airlines.
+
+:::
 
 
 ## Quiz 1
@@ -115,8 +122,12 @@ d)    band, plays; primary key - band, plays
 
 ## Mutating Join 
 
+::: nonincremental
+
 -   A mutating join allows you to combine variables from two tables. 
 -   It first matches observations by their keys, then copies across variables from one table to the other.
+
+:::
 
 ## Understanding Joins 
 
@@ -254,6 +265,8 @@ left_join(x, y, by = "key")
 
 ## Filtering Joins
 
+::: nonincremental
+
 -   Affect the observations, not the variables. Never have duplicate rows.
 
 -   `semi_join(x, y)` keeps all observations in `x` that have a match in `y`.
@@ -261,6 +274,8 @@ left_join(x, y, by = "key")
 -   `anti_join(x, y)` drops all observations in `x` that have a match in `y`.
 
 -   Anti-joins are useful for diagnosing join mismatches.
+
+:::
 
 ## Semi join and Anti join
 
@@ -332,8 +347,7 @@ intersect(df1, df2)
 
 ::: {.nonincremental}
 
--   R for Data Science [Chapter 5](https://r4ds.had.co.nz/transform.html#ungrouping)
+-   R for Data Science [Chapter 13](https://r4ds.had.co.nz/relational-data.html#relational-data)
 -   Slides made using [Quarto](https://meghan.rbind.io/blog/quarto-slides/#quarto-resources)
 -   Art work by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
--   [Joins animation](https://github.com/gadenbuie/tidyexplain)
 :::

@@ -442,7 +442,12 @@
 <ul>
 <li class="fragment">A <code>primary key</code> uniquely identifies an observation in its own table.</li>
 <li class="fragment">A <code>foreign key</code> uniquely identifies an observation in another table.</li>
-<li class="fragment">Hence these keys cannot have duplicates. They can be combination of keys as well.</li>
+</ul>
+</section>
+<section id="understanding-keys" class="slide level2">
+<h2>Understanding Keys</h2>
+<ul>
+<li class="fragment">These keys cannot have duplicates. They can be combination of keys as well.</li>
 <li class="fragment">Sometimes a table doesn’t have an explicit primary key, there a new row can be created as <code>surrogate key</code> using <code>mutate()</code> or <code>row_number()</code>.</li>
 </ul>
 <p><br></p>
@@ -454,11 +459,13 @@
 </section>
 <section id="relations" class="slide level2">
 <h2>Relations</h2>
+<div>
 <ul>
-<li class="fragment">A primary key and the corresponding foreign key in another table form a relation.</li>
-<li class="fragment">Relations are typically one-to-many. For example, each flight has one plane, but each plane has many flights.</li>
-<li class="fragment">many-to-many relations are possible as well. Eg- each airline flies to many airports; each airport hosts many airlines.</li>
+<li>A primary key and the corresponding foreign key in another table form a relation.</li>
+<li>Relations are typically one-to-many. For example, each flight has one plane, but each plane has many flights.</li>
+<li>many-to-many relations are possible as well. Eg- each airline flies to many airports; each airport hosts many airlines.</li>
 </ul>
+</div>
 </section>
 <section id="quiz-1" class="slide level2">
 <h2>Quiz 1</h2>
@@ -490,10 +497,12 @@
 <img data-src="img/keys.png" class="r-stretch"></section>
 <section id="mutating-join" class="slide level2">
 <h2>Mutating Join</h2>
+<div>
 <ul>
-<li class="fragment">A mutating join allows you to combine variables from two tables.</li>
-<li class="fragment">It first matches observations by their keys, then copies across variables from one table to the other.</li>
+<li>A mutating join allows you to combine variables from two tables.</li>
+<li>It first matches observations by their keys, then copies across variables from one table to the other.</li>
 </ul>
+</div>
 </section>
 <section id="understanding-joins" class="slide level2">
 <h2>Understanding Joins</h2>
@@ -653,12 +662,14 @@
 </section>
 <section id="filtering-joins" class="slide level2">
 <h2>Filtering Joins</h2>
+<div>
 <ul>
-<li class="fragment"><p>Affect the observations, not the variables. Never have duplicate rows.</p></li>
-<li class="fragment"><p><code>semi_join(x, y)</code> keeps all observations in <code>x</code> that have a match in <code>y</code>.</p></li>
-<li class="fragment"><p><code>anti_join(x, y)</code> drops all observations in <code>x</code> that have a match in <code>y</code>.</p></li>
-<li class="fragment"><p>Anti-joins are useful for diagnosing join mismatches.</p></li>
+<li><p>Affect the observations, not the variables. Never have duplicate rows.</p></li>
+<li><p><code>semi_join(x, y)</code> keeps all observations in <code>x</code> that have a match in <code>y</code>.</p></li>
+<li><p><code>anti_join(x, y)</code> drops all observations in <code>x</code> that have a match in <code>y</code>.</p></li>
+<li><p>Anti-joins are useful for diagnosing join mismatches.</p></li>
 </ul>
+</div>
 </section>
 <section id="semi-join-and-anti-join" class="slide level2">
 <h2>Semi join and Anti join</h2>
@@ -726,10 +737,9 @@
 <h2>Resources</h2>
 <div>
 <ul>
-<li>R for Data Science <a href="https://r4ds.had.co.nz/transform.html#ungrouping">Chapter 5</a></li>
+<li>R for Data Science <a href="https://r4ds.had.co.nz/relational-data.html#relational-data">Chapter 13</a></li>
 <li>Slides made using <a href="https://meghan.rbind.io/blog/quarto-slides/#quarto-resources">Quarto</a></li>
 <li>Art work by <a href="https://github.com/allisonhorst/stats-illustrations">Allison Horst</a></li>
-<li><a href="https://github.com/gadenbuie/tidyexplain">Joins animation</a></li>
 </ul>
 </div>
 <div class="footer footer-default">
