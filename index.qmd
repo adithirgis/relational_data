@@ -76,7 +76,7 @@ library(tidyverse)
 
 . . .
 
-::: {.fragment .highlight-blue}
+::: {.fragment .highlight-seagreen}
 A variable can be both a primary key and a foreign key.
 :::
 
@@ -262,6 +262,10 @@ left_join(x, y, by = "key")
 
 :::
 
+
+## Concept Map
+
+![](img/mutating_join.png)
 
 ## Filtering Joins
 
