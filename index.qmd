@@ -92,6 +92,7 @@ A variable can be both a primary key and a foreign key.
 
 
 ## Quiz 1
+
 ::: nonincremental
 Imagine you wanted to find out which musician from a particular band played which instrument. What variables would you need? Identify the primary key to be used.
 
@@ -227,6 +228,35 @@ band_instruments %>%
 
 ![](img/all_outer_join.png)
 
+## Quiz 2
+
+:: nonincremental
+How to combine all observations from the two tables band_members and band_instruments to get a table as shown here.
+
+::: columns
+::: {.column width="60%"}
+
+a)    left_join 
+
+::: {.fragment .highlight-red}
+b)    full_join 
+:::
+
+c)    right_join
+
+d)    inner_join 
+:::
+
+::: {.column width="40%"}
+![](img/quiz2.png)
+
+:::
+:::
+:::
+
+
+
+
 ## Duplicate Keys 
 
 ::: nonincremental
@@ -346,6 +376,26 @@ df2 <- tribble(
 intersect(df1, df2)
 ```
 
+## Quiz 3
+
+::: nonincremental
+
+How are joins and set operations different from each other? (Choose one or many)
+
+
+::: {.fragment .highlight-red}
+a)    set operations need same column / variable names while joins do not
+:::
+
+b)    no difference both are same, just different syntax 
+
+::: {.fragment .highlight-red}
+c)    set operations are base R functions and joins are tidyverse functions 
+:::
+
+::: {.fragment .highlight-red}
+d)    set operations have no keys but joins have keys  
+:::
 
 ## Resources
 
