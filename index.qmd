@@ -37,8 +37,6 @@ library(tidyverse)
 
 ## Shortcut of the day
 
-::: nonincremental
-
 `Alt + Shift + K`
 
 </br>
@@ -46,9 +44,6 @@ library(tidyverse)
 ::: {.fragment .highlight-red}
 Shows all keyboard shortcuts!
 :::
-
-:::
-
 
 
 ## Relational Data
