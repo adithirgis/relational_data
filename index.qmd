@@ -417,14 +417,9 @@ How are joins and set operations different from each other? (Choose one or many)
 a)    set operations need same column / variable names while joins do not
 :::
 
-b)    no difference both are same, just different syntax 
-
+b)    no difference both are same, but have different syntax 
 ::: {.fragment .highlight-red}
-c)    set operations are base R functions and joins are tidyverse functions 
-:::
-
-::: {.fragment .highlight-red}
-d)    set operations have no keys but joins have keys  
+c)    set operations have no keys but joins have keys  
 :::
 
 :::

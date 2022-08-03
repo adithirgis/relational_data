@@ -1,0 +1,163 @@
+---
+title: "Relational Data"
+author: "Adithi R Upadhya"
+date: "2022-08-04"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_download: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE, 
+                      cache = TRUE, 
+                      message = FALSE)
+```
+
+## Load packages
+
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+```
+
+## Look at the first table band_members
+
+```{r message = FALSE, warning = FALSE}
+glimpse(band_members)
+```
+## Look at the second table band_instruments
+
+```{r message = FALSE, warning = FALSE}
+glimpse(band_instruments) 
+```
+
+## Using `inner_join`
+
+```{r message = FALSE, warning = FALSE}
+inner_join(band_instruments, band_members, by = "name")
+```
+
+## Using `left_join`
+
+```{r message = FALSE, warning = FALSE}
+band_instruments %>% 
+  left_join(band_members, by = "name")
+```
+
+## Using `right_join`
+
+```{r message = FALSE, warning = FALSE}
+band_instruments %>% 
+  right_join(band_members, by = "name")
+```
+
+
+## Using `full_join`
+
+```{r message = FALSE, warning = FALSE}
+band_instruments %>% 
+  full_join(band_members, by = "name")
+```
+
+## Duplicate keys 
+
+```{r message = FALSE, warning = FALSE}
+x <- tribble(
+  ~key, ~val_x,
+     1, "x1",
+     2, "x2",
+     2, "x3"
+)
+y <- tribble(
+  ~key, ~val_y,
+     1, "y1",
+     2, "y2"
+)
+left_join(x, y, by = "key")
+```
+
+
+```{r message = FALSE, warning = FALSE}
+x <- tribble(
+  ~key, ~val_x,
+     1, "x1",
+     2, "x2",
+     2, "x3"
+)
+y <- tribble(
+  ~key, ~val_y,
+     1, "y1",
+     2, "y2",
+     2, "y3"
+)
+left_join(x, y, by = "key")
+```
+
+
+
+## Defining the key columns
+
+### Using default key
+
+```{r message = FALSE, warning = FALSE}
+inner_join(band_members, band_instruments)
+```
+
+### Using a character vector
+
+```{r message = FALSE, warning = FALSE}
+inner_join(band_members, band_instruments, by = "name")
+```
+
+### Using a named character vector
+
+```{r message = FALSE, warning = FALSE}
+inner_join(band_members, band_instruments, by = c("name" = "name"))
+```
+
+
+## Semi Join 
+
+```{r message = FALSE, warning = FALSE}
+semi_join(band_members, band_instruments, by = c("name" = "name"))
+```
+
+## Anti Join 
+
+```{r message = FALSE, warning = FALSE}
+anti_join(band_members, band_instruments, by = c("name" = "name"))
+```
+
+
+
+## Intersect 
+
+```{r message = FALSE, warning = FALSE}
+df1 <- tribble(
+  ~x, ~y,
+   1,  1,
+   2,  1
+)
+df2 <- tribble(
+  ~x, ~y,
+   1,  1,
+   1,  2
+)
+
+intersect(df1, df2)
+```
+
+## Union 
+
+```{r message = FALSE, warning = FALSE}
+union(df1, df2)
+```
+
+## setdiff 
+
+```{r message = FALSE, warning = FALSE}
+setdiff(df1, df2)
+```
+
