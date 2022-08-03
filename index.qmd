@@ -231,14 +231,18 @@ band_instruments %>%
 ## Quiz 2
 
 ::: nonincremental
+
 How to combine all observations from the two tables band_members and band_instruments to get a table as shown here.
 
 ::: columns
 ::: {.column width="60%"}
 
 a)    left_join 
+
 ::: {.fragment .highlight-red}
+
 b)    full_join 
+
 :::
 c)    right_join
 
