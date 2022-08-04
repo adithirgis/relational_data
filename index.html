@@ -652,16 +652,6 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 </section>
 <section id="outer-joins" class="slide level2">
 <h2>Outer Joins</h2>
-<div>
-<ul>
-<li>An outer join keeps observations that appear in at least one of the tables.</li>
-<li>These joins work by adding an additional <code>virtual</code> observation to each table.</li>
-<li>This observation has a key that always matches (if no other key matches), and a value filled with <code>NA</code>.</li>
-</ul>
-</div>
-</section>
-<section id="outer-joins-1" class="slide level2">
-<h2>Outer Joins</h2>
 
 <img data-src="img/all_outer_join.png" class="r-stretch"></section>
 <section id="quiz-2" class="slide level2">
@@ -685,37 +675,6 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 </div><div class="column" style="width:60%;">
 <p><img data-src="img/band_members.png"> <img data-src="img/band_instruments.png"> <img data-src="img/quiz2.png"></p>
 </div>
-</div>
-</div>
-</section>
-<section id="duplicate-keys" class="slide level2">
-<h2>Duplicate Keys</h2>
-<div>
-<p>One table has duplicate keys. This is useful when you want to add in additional information as there is typically a one-to-many relationship.</p>
-</div>
-</section>
-<section id="demo-4" class="slide level2">
-<h2>Demo</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-7_deb78dce858f9d74a447b6d1abee5c41">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>x <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="sc">~</span>key, <span class="sc">~</span>val_x,</span>
-<span id="cb14-3"><a href="#cb14-3"></a>     <span class="dv">1</span>, <span class="st">"x1"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4"></a>     <span class="dv">2</span>, <span class="st">"x2"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5"></a>     <span class="dv">2</span>, <span class="st">"x3"</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>)</span>
-<span id="cb14-7"><a href="#cb14-7"></a>y <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb14-8"><a href="#cb14-8"></a>  <span class="sc">~</span>key, <span class="sc">~</span>val_y,</span>
-<span id="cb14-9"><a href="#cb14-9"></a>     <span class="dv">1</span>, <span class="st">"y1"</span>,</span>
-<span id="cb14-10"><a href="#cb14-10"></a>     <span class="dv">2</span>, <span class="st">"y2"</span></span>
-<span id="cb14-11"><a href="#cb14-11"></a>)</span>
-<span id="cb14-12"><a href="#cb14-12"></a><span class="fu">left_join</span>(x, y, <span class="at">by =</span> <span class="st">"key"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-    key val_x val_y
-  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
-1     1 x1    y1   
-2     2 x2    y2   
-3     2 x3    y2   </code></pre>
 </div>
 </div>
 </section>
@@ -770,7 +729,6 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 <div>
 <ul>
 <li>The final type of two-table verb are the set operations.</li>
-<li>All these operations work with a complete row, comparing the values of every variable.</li>
 <li>These expect the x and y inputs to have the same variables, and treat the observations like sets.</li>
 </ul>
 </div>
@@ -793,21 +751,21 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 </div>
 </div>
 </section>
-<section id="demo-5" class="slide level2">
+<section id="demo-4" class="slide level2">
 <h2>Demo</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-8_16e7020beb1160c2b20d5404ad36fd18">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
-<span id="cb16-3"><a href="#cb16-3"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
-<span id="cb16-4"><a href="#cb16-4"></a>   <span class="dv">2</span>,  <span class="dv">1</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>)</span>
-<span id="cb16-6"><a href="#cb16-6"></a>df2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb16-7"><a href="#cb16-7"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
-<span id="cb16-9"><a href="#cb16-9"></a>   <span class="dv">1</span>,  <span class="dv">2</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>)</span>
-<span id="cb16-11"><a href="#cb16-11"></a></span>
-<span id="cb16-12"><a href="#cb16-12"></a><span class="fu">intersect</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-7_b3ad0f108c1fe614d2cb581a0759858e">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
+<span id="cb14-3"><a href="#cb14-3"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>   <span class="dv">2</span>,  <span class="dv">1</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>)</span>
+<span id="cb14-6"><a href="#cb14-6"></a>df2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb14-7"><a href="#cb14-7"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
+<span id="cb14-8"><a href="#cb14-8"></a>   <span class="dv">1</span>,  <span class="dv">1</span>,</span>
+<span id="cb14-9"><a href="#cb14-9"></a>   <span class="dv">1</span>,  <span class="dv">2</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a>)</span>
+<span id="cb14-11"><a href="#cb14-11"></a></span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="fu">intersect</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
       x     y

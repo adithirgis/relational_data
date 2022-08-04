@@ -264,16 +264,6 @@ band_instruments %>%
 
 ## Outer Joins
 
-::: nonincremental
-
--   An outer join keeps observations that appear in at least one of the tables. 
--   These joins work by adding an additional `virtual` observation to each table.
--   This observation has a key that always matches (if no other key matches), and a value filled with `NA`.
-
-:::
-
-## Outer Joins
-
 ![](img/all_outer_join.png)
 
 ## Quiz 2
@@ -303,35 +293,6 @@ d)    inner_join
 :::
 :::
 :::
-
-
-
-
-## Duplicate Keys 
-
-::: nonincremental
-
-One table has duplicate keys. This is useful when you want to add in additional information as there is typically a one-to-many relationship.
-
-:::
-
-## Demo
-
-```{r}
-x <- tribble(
-  ~key, ~val_x,
-     1, "x1",
-     2, "x2",
-     2, "x3"
-)
-y <- tribble(
-  ~key, ~val_y,
-     1, "y1",
-     2, "y2"
-)
-left_join(x, y, by = "key")
-```
-
 
 ## Defining `key` columns 
 ::: nonincremental
@@ -396,7 +357,6 @@ left_join(x, y, by = "key")
 ::: nonincremental
 
 -   The final type of two-table verb are the set operations.
--   All these operations work with a complete row, comparing the values of every variable. 
 -   These expect the x and y inputs to have the same variables, and treat the observations like sets.
 
 :::
