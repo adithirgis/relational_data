@@ -183,7 +183,8 @@ d)    band, plays; primary key - band, plays
 
 -   The output of an inner join is a new data frame that contains the key, the x values, and the y values. 
 
--   Use `by` to tell dplyr which variable is the key.
+![](img/inner_join.png)
+
 :::
 
 ## Demo
@@ -193,7 +194,6 @@ d)    band, plays; primary key - band, plays
 inner_join(band_instruments, band_members, by = "name")
 ```
 
-![](img/inner_join.png){width="300" height="200"}
 :::
 
 ## Left Join
@@ -202,12 +202,19 @@ inner_join(band_instruments, band_members, by = "name")
 
 A `left join` keeps all observations in `x`.
 
+![](img/left_join.png)
+
+:::
+
+
+## Demo 
+
+::: nonincremental
+
 ```{r}
 band_instruments %>% 
   left_join(band_members, by = "name")
 ```
-
-![](img/left_join.png){width="300" height="200"}
 
 :::
 
@@ -217,13 +224,21 @@ band_instruments %>%
 
 A `right join` keeps all observations in `y`.
 
+
+
+![](img/right_join.png)
+:::
+
+## Demo 
+
+::: nonincremental
+
 ```{r}
 band_instruments %>% 
   right_join(band_members, by = "name")
 ```
-
-![](img/right_join.png){width="300" height="200"}
 :::
+
 
 ## Full Join
 
@@ -231,14 +246,21 @@ band_instruments %>%
 
 A `full join` keeps all observations in `x` and `y`.
 
+![](img/full_join.png)
+
+:::
+
+
+## Demo 
+
+::: nonincremental
+
 ```{r}
 band_instruments %>% 
   full_join(band_members, by = "name")
 ```
-
-![](img/outer_join.png){width="300" height="200"}
-
 :::
+
 
 ## Outer Joins
 
@@ -386,6 +408,24 @@ left_join(x, y, by = "key")
 -   `union(x, y)`: return unique observations in `x` and `y`
 
 -   `setdiff(x, y)`: return observations in `x`, but not in `y`
+
+
+## `intersect` and `union`
+
+::: columns 
+
+::: {.column width="50%"}
+
+![](img/intersect.png){width="300" height="200"}
+:::
+
+::: {.column width="50%"}
+
+![](img/union.png){width="300" height="200"}
+
+:::
+:::
+
 
 ## Demo 
 

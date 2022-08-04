@@ -558,8 +558,8 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 <ul>
 <li><p>An inner join matches pairs of observations whenever their keys are equal.</p></li>
 <li><p>The output of an inner join is a new data frame that contains the key, the x values, and the y values.</p></li>
-<li><p>Use <code>by</code> to tell dplyr which variable is the key.</p></li>
 </ul>
+<p><img data-src="img/inner_join.png"></p>
 </div>
 </section>
 <section id="demo" class="slide level2">
@@ -575,13 +575,18 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 2 Paul  bass   Beatles</code></pre>
 </div>
 </div>
-<p><img data-src="img/inner_join.png" width="300" height="200"></p>
 </div>
 </section>
 <section id="left-join" class="slide level2">
 <h2>Left Join</h2>
 <div>
 <p>A <code>left join</code> keeps all observations in <code>x</code>.</p>
+<p><img data-src="img/left_join.png"></p>
+</div>
+</section>
+<section id="demo-1" class="slide level2">
+<h2>Demo</h2>
+<div>
 <div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-4_4a1a34a529f3540da53973d6db5ea27f">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
 <span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">left_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -594,13 +599,18 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 3 Keith guitar &lt;NA&gt;   </code></pre>
 </div>
 </div>
-<p><img data-src="img/left_join.png" width="300" height="200"></p>
 </div>
 </section>
 <section id="right-join" class="slide level2">
 <h2>Right Join</h2>
 <div>
 <p>A <code>right join</code> keeps all observations in <code>y</code>.</p>
+<p><img data-src="img/right_join.png"></p>
+</div>
+</section>
+<section id="demo-2" class="slide level2">
+<h2>Demo</h2>
+<div>
 <div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-5_7d338cc5206c718673dc46f88ab5f3d5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">right_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -613,13 +623,18 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 3 Mick  &lt;NA&gt;   Stones </code></pre>
 </div>
 </div>
-<p><img data-src="img/right_join.png" width="300" height="200"></p>
 </div>
 </section>
 <section id="full-join" class="slide level2">
 <h2>Full Join</h2>
 <div>
 <p>A <code>full join</code> keeps all observations in <code>x</code> and <code>y</code>.</p>
+<p><img data-src="img/full_join.png"></p>
+</div>
+</section>
+<section id="demo-3" class="slide level2">
+<h2>Demo</h2>
+<div>
 <div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-6_965a362e6d98fcb594545bc6649b3dff">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>band_instruments <span class="sc">%&gt;%</span> </span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">full_join</span>(band_members, <span class="at">by =</span> <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -633,7 +648,6 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 4 Mick  &lt;NA&gt;   Stones </code></pre>
 </div>
 </div>
-<p><img data-src="img/outer_join.png" width="300" height="200"></p>
 </div>
 </section>
 <section id="outer-joins" class="slide level2">
@@ -680,7 +694,7 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 <p>One table has duplicate keys. This is useful when you want to add in additional information as there is typically a one-to-many relationship.</p>
 </div>
 </section>
-<section id="demo-1" class="slide level2">
+<section id="demo-4" class="slide level2">
 <h2>Demo</h2>
 <div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-7_deb78dce858f9d74a447b6d1abee5c41">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>x <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
@@ -769,7 +783,17 @@ $ plays &lt;chr&gt; "guitar", "bass", "guitar"</code></pre>
 <li class="fragment"><p><code>setdiff(x, y)</code>: return observations in <code>x</code>, but not in <code>y</code></p></li>
 </ul>
 </section>
-<section id="demo-2" class="slide level2">
+<section id="intersect-and-union" class="slide level2">
+<h2><code>intersect</code> and <code>union</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/intersect.png" width="300" height="200"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/union.png" width="300" height="200"></p>
+</div>
+</div>
+</section>
+<section id="demo-5" class="slide level2">
 <h2>Demo</h2>
 <div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-8_16e7020beb1160c2b20d5404ad36fd18">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
