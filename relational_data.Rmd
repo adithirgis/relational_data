@@ -42,23 +42,34 @@ inner_join(band_instruments, band_members, by = "name")
 ## Using `left_join`
 
 ```{r message = FALSE, warning = FALSE}
+left_join(band_instruments, band_members, by = "name")
+
 band_instruments %>% 
   left_join(band_members, by = "name")
+```
+
+```{r message = FALSE, warning = FALSE}
+left_join(band_instruments, band_members)
+
+```
+
+
+```{r message = FALSE, warning = FALSE}
+left_join(band_instruments, band_members, by = c("name" = "name"))
+
 ```
 
 ## Using `right_join`
 
 ```{r message = FALSE, warning = FALSE}
-band_instruments %>% 
-  right_join(band_members, by = "name")
+right_join(band_instruments, band_members, by = "name")
 ```
 
 
 ## Using `full_join`
 
 ```{r message = FALSE, warning = FALSE}
-band_instruments %>% 
-  full_join(band_members, by = "name")
+full_join(band_instruments, band_members, by = "name")
 ```
 
 ## Duplicate keys 
@@ -159,5 +170,10 @@ union(df1, df2)
 
 ```{r message = FALSE, warning = FALSE}
 setdiff(df1, df2)
+```
+
+
+```{r message = FALSE, warning = FALSE}
+setdiff(df2, df1)
 ```
 
